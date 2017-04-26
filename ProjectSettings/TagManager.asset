@@ -13,6 +13,9 @@ TagManager:
   - GreenPosition
   - Geometry
   - UI
+  - ButtonPuzzle1
+  - ButtonPuzzle2
+  - ButtonPuzzle3
   layers:
   - Default
   - TransparentFX

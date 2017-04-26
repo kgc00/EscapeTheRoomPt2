@@ -8,6 +8,7 @@ public class EscapeController : MonoBehaviour
     //CharacterController cc;
     EscapeScript es;
     public Quaternion myRot;
+    ButtonPuzzleScript bps;
 
     //public int score = 0;
     //float moveSpeed = 5f;
@@ -34,6 +35,7 @@ public class EscapeController : MonoBehaviour
     void Start()
     {
         //cc = gameObject.GetComponent<CharacterController>();
+        bps = FindObjectOfType<ButtonPuzzleScript>();
         es = gameObject.GetComponent<EscapeScript>();
         myPlayPosition = gameObject.transform.position;
     }
@@ -61,6 +63,24 @@ public class EscapeController : MonoBehaviour
                     {
                         //hit.collider.gameObject.GetComponent<MoveLocationScript>().MoveMethod();
                         transform.position = new Vector3(hit.collider.gameObject.GetComponent<MoveLocationScript>().myMoveLocation.x, transform.position.y, hit.collider.gameObject.GetComponent<MoveLocationScript>().myMoveLocation.z);
+                    }
+                    else if (hit.collider.gameObject.tag == "ButtonPuzzle1")
+                    {
+                        hit.collider.gameObject.GetComponent<Button1Script>().Pressed(bps.order);
+                        Debug.Log("yay");
+                        Debug.Log(bps.order);
+                    }
+                    else if (hit.collider.gameObject.tag == "ButtonPuzzle2")
+                    {
+                        hit.collider.gameObject.GetComponent<Button2Script>().Pressed(bps.order);
+                        Debug.Log("cat");
+                        Debug.Log(bps.order);
+                    }
+                    else if (hit.collider.gameObject.tag == "ButtonPuzzle3")
+                    {
+                        hit.collider.gameObject.GetComponent<Button3Script>().Pressed(bps.order);
+                        Debug.Log("alc");
+                        Debug.Log(bps.order);
                     }
                     else
                     {

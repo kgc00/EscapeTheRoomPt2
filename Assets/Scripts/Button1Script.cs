@@ -17,6 +17,16 @@ public class Button1Script : MonoBehaviour {
 		
 	}
 
+    public void OnMouseOver()
+    {
+        gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 0);
+    }
+
+    public void OnMouseExit()
+    {
+        gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
+    }
+
     public void Pressed(int order)
     {
         if (bps.order == 2)
@@ -25,7 +35,7 @@ public class Button1Script : MonoBehaviour {
         }
         else
         {
-            bps.order = 1;
+            bps.order = 2;
         }
     }
 }

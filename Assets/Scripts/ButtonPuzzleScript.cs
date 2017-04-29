@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonPuzzleScript : MonoBehaviour {
 
     public GameObject winSparkle;
-    public int order = 0;
+    public int order = 1;
 
 	// Use this for initialization
 	void Start () {

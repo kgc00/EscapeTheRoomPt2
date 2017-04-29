@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4004293971793094}
   - component: {fileID: 198594601100297244}
   - component: {fileID: 199044043483175510}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,10 +38,11 @@ GameObject:
   - component: {fileID: 4241194962467900}
   - component: {fileID: 33995555761376036}
   - component: {fileID: 23960026516698338}
-  - component: {fileID: 95263319620119048}
-  m_Layer: 0
+  - component: {fileID: 64582739664928438}
+  - component: {fileID: 114866777265797444}
+  m_Layer: 11
   m_Name: StoneTiles2
-  m_TagString: Untagged
+  m_TagString: MoveLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4729719506773766}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MovePosition
   m_TagString: MoveLocation
   m_Icon: {fileID: 0}
@@ -93,9 +94,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522190686062112}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.54, y: 2.5399976, z: 2.5399976}
   m_Children:
   - {fileID: 4241194962467900}
   - {fileID: 4004293971793094}
@@ -141,23 +142,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1077427563249416}
   m_Mesh: {fileID: 4300000, guid: ab36df6897684d74dafebc76e661d10d, type: 3}
---- !u!95 &95263319620119048
-Animator:
-  serializedVersion: 3
+--- !u!64 &64582739664928438
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1077427563249416}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: ab36df6897684d74dafebc76e661d10d, type: 3}
+--- !u!114 &114866777265797444
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1077427563249416}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ab36df6897684d74dafebc76e661d10d, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e026fd96c5ac35444bf1f4a404ef21ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMoveLocation: {x: 0, y: 0, z: 0}
+  ec: {fileID: 0}
+  es: {fileID: 0}
+  myPlay: {fileID: 1825608423455646, guid: 1c08eb301f584844582b028d2ea94cbc, type: 2}
 --- !u!198 &198594601100297244
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -165,9 +178,9 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064886037983134}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 30
   simulationSpeed: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   autoRandomSeed: 1
@@ -213,13 +226,13 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -312511700
+  randomSeed: 304235210
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       minMaxState: 0
-      scalar: 5
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -258,7 +271,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       minMaxState: 0
-      scalar: 5
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -357,7 +370,7 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.75735295, g: 0.71433896, b: 0.6014273, a: 1}
     startSize:
       minMaxState: 0
       scalar: 1
@@ -747,7 +760,7 @@ ParticleSystem:
     serializedVersion: 4
     rateOverTime:
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -823,8 +836,33 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 0
-    m_Bursts: []
+    m_BurstCount: 5
+    m_Bursts:
+    - time: 0
+      minCount: 10
+      maxCount: 10
+      cycleCount: 1
+      repeatInterval: 0.01
+    - time: 2.5
+      minCount: 30
+      maxCount: 30
+      cycleCount: 1
+      repeatInterval: 0.01
+    - time: 5
+      minCount: 30
+      maxCount: 30
+      cycleCount: 1
+      repeatInterval: 0.01
+    - time: 7.5
+      minCount: 30
+      maxCount: 30
+      cycleCount: 1
+      repeatInterval: 0.01
+    - time: 10
+      minCount: 30
+      maxCount: 30
+      cycleCount: 1
+      repeatInterval: 0.01
   SizeModule:
     enabled: 0
     curve:
@@ -1066,15 +1104,15 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.58823526, g: 0.5710451, b: 0.45415223, a: 1}
+        key1: {r: 0.30980393, g: 0.28627452, b: 0.15686275, a: 0}
+        key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1089,8 +1127,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
+        atime1: 29491
+        atime2: 34117
         atime3: 0
         atime4: 0
         atime5: 0

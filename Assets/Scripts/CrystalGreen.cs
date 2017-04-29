@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button2Script : MonoBehaviour {
+public class CrystalGreen : MonoBehaviour {
 
-    //Cat
-    ButtonPuzzleScript bps;
+    CrystalManager cm;
 
     // Use this for initialization
     void Start()
     {
-        bps = FindObjectOfType<ButtonPuzzleScript>();
+        cm = FindObjectOfType<CrystalManager>();
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update()
+    {
+
+    }
 
     public void OnMouseOver()
     {
@@ -28,18 +28,9 @@ public class Button2Script : MonoBehaviour {
         gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
     }
 
-    public void Pressed(int order)
+    public void OnMouseDown()
     {
-        if (bps.order == 3)
-        {
-            bps.order++;
-        } else if (bps.order == 5)
-        {
-            bps.order++;
-        }
-        else
-        {
-            bps.order = 1;
-        }
+        cm.holdingGreen = true;
+       // Destroy(gameObject);
     }
 }

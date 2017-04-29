@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23941189767746104}
   - component: {fileID: 95899717037137566}
   - component: {fileID: 64128473182098706}
+  - component: {fileID: 114137839910703068}
   m_Layer: 0
   m_Name: Red Gem
   m_TagString: Untagged
@@ -113,3 +114,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114137839910703068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1101532530389912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a0e214450490847878dc2ef5076b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

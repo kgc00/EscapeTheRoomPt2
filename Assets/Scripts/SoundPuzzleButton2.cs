@@ -2,21 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button3Script : MonoBehaviour {
+public class SoundPuzzleButton2 : MonoBehaviour {
 
-    //Alcohol
-    ButtonPuzzleScript bps;
+
+    SoundPuzzleManager spm;
 
     // Use this for initialization
     void Start()
     {
-        bps = FindObjectOfType<ButtonPuzzleScript>();
+        spm = FindObjectOfType<SoundPuzzleManager>();
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update()
+    {
+
+    }
+
+    public void OnMouseDown()
+    {
+        Pressed(spm.order);
+        gameObject.GetComponent<AudioSource>().Play();
+    }
 
     public void OnMouseOver()
     {
@@ -30,21 +37,24 @@ public class Button3Script : MonoBehaviour {
 
     public void Pressed(int order)
     {
-        if (bps.order == 1)
+        if (spm.order == 1)
         {
-            bps.order++;
+            spm.order++;
+            
         }
-        else if (bps.order == 4)
+        else if (spm.order == 2)
         {
-            bps.order++;
+            spm.order++;
+           
         }
-        else if (bps.order == 6)
+        else if (spm.order == 4)
         {
-            bps.order++;
+            spm.order++;
+           
         }
         else
         {
-            bps.order = 1;
+            spm.order = 1;
         }
     }
 }

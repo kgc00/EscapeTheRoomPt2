@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33369638098474624}
   - component: {fileID: 23124203019454328}
   - component: {fileID: 95039176852422828}
+  - component: {fileID: 64381109686634856}
+  - component: {fileID: 114248826430386010}
   m_Layer: 0
   m_Name: altar b
   m_TagString: Untagged
@@ -72,6 +74,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33369638098474624
 MeshFilter:
@@ -79,6 +82,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1090762196373440}
+  m_Mesh: {fileID: 4300000, guid: 0b8d0901ff1c4bf4eb025ac7c8be79af, type: 3}
+--- !u!64 &64381109686634856
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1090762196373440}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 0b8d0901ff1c4bf4eb025ac7c8be79af, type: 3}
 --- !u!95 &95039176852422828
 Animator:
@@ -97,3 +114,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114248826430386010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1090762196373440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b98367be0ba4642a1a54766daf706c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

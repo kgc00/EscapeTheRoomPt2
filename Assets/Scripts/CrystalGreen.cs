@@ -30,7 +30,10 @@ public class CrystalGreen : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        cm.holdingGreen = true;
-       // Destroy(gameObject);
+        if (cm.canPickUp)
+        {
+            cm.holdingGreen = true;
+            Destroy(gameObject);
+        }
     }
 }

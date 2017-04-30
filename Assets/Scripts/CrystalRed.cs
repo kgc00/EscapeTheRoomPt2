@@ -5,10 +5,12 @@ using UnityEngine;
 public class CrystalRed : MonoBehaviour {
 
     CrystalManager cm;
+    ButtonPuzzleScript bps;
 
 	// Use this for initialization
 	void Start () {
         cm = FindObjectOfType<CrystalManager>();
+        bps = FindObjectOfType<ButtonPuzzleScript>();
 	}
 	
 	// Update is called once per frame
@@ -28,8 +30,12 @@ public class CrystalRed : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        cm.holdingRed = true;
-        //Destroy(gameObject);
+        if (cm.canPickUp)
+        {
+            cm.holdingRed = true;
+            Destroy(gameObject);
+        }
+        
     }
 
 }

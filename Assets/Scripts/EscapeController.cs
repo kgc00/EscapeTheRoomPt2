@@ -42,10 +42,6 @@ public class EscapeController : MonoBehaviour
 
     void Update()
     {
-        if (es.isDead)
-        {
-            canMove = false;
-        }
         if (canMove)
         {            
             if (Input.GetMouseButtonDown(0))
@@ -67,20 +63,14 @@ public class EscapeController : MonoBehaviour
                     else if (hit.collider.gameObject.tag == "ButtonPuzzle1")
                     {
                         hit.collider.gameObject.GetComponent<Button1Script>().Pressed(bps.order);
-                        Debug.Log("yay");
-                        Debug.Log(bps.order);
                     }
                     else if (hit.collider.gameObject.tag == "ButtonPuzzle2")
                     {
                         hit.collider.gameObject.GetComponent<Button2Script>().Pressed(bps.order);
-                        Debug.Log("cat");
-                        Debug.Log(bps.order);
                     }
                     else if (hit.collider.gameObject.tag == "ButtonPuzzle3")
                     {
                         hit.collider.gameObject.GetComponent<Button3Script>().Pressed(bps.order);
-                        Debug.Log("alc");
-                        Debug.Log(bps.order);
                     }
                     else
                     {

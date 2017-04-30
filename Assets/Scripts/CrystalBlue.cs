@@ -30,7 +30,10 @@ public class CrystalBlue : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        cm.holdingBlue = true;
-        //Destroy(gameObject);
+        if (cm.canPickUp)
+        { 
+            cm.holdingBlue = true;
+            Destroy(gameObject);
+        }
     }
 }

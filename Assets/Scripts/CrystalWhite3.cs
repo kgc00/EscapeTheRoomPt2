@@ -4,17 +4,75 @@ using UnityEngine;
 
 public class CrystalWhite3 : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    CrystalManager cm;
+    public Material blueMat;
+    public Material greenMat;
+    public Material redMat;
+    public Material whiteMat;
+    bool isColored = false;
+    public bool properGem = false;
+
+    // Use this for initialization
+    void Start()
+    {
+        cm = FindObjectOfType<CrystalManager>();
+    }
+
+    // Update is called once per frame
+    void Update () {
         
 	}
 
-    
+    public void OnMouseDown()
+    {
+        if (cm.activeGem == 1 && cm.holdingBlue)
+        {
+            gameObject.GetComponent<Renderer>().material = blueMat;
+            cm.holdingBlue = false;
+            cm.activeGem = 0;
+            isColored = true;
+            properGem = true;
+        }
+        else if (cm.activeGem == 2 && cm.holdingGreen)
+        {
+            gameObject.GetComponent<Renderer>().material = greenMat;
+            cm.holdingGreen = false;
+            cm.activeGem = 0;
+            isColored = true;
+            properGem = false;
+        }
+        else if (cm.activeGem == 3 && cm.holdingRed)
+        {
+            gameObject.GetComponent<Renderer>().material = redMat;
+            cm.holdingRed = false;
+            cm.activeGem = 0;
+            isColored = true;
+            properGem = false;
+        }
+        else if (isColored)
+        {
+            if (gameObject.GetComponent<Renderer>().material.name == "Material_003 (Instance)")
+            {
+                cm.ObtainedBlue();
+                gameObject.GetComponent<Renderer>().material = whiteMat;
+                isColored = false;
+                properGem = false;
+            }
+            else if (gameObject.GetComponent<Renderer>().material.name == "Material_002 (Instance)")
+            {
+                cm.holdingGreen = true;
+                gameObject.GetComponent<Renderer>().material = whiteMat;
+                isColored = false;
+            }
+            else if (gameObject.GetComponent<Renderer>().material.name == "Material_001 (Instance)")
+            {
+                cm.holdingRed = true;
+                gameObject.GetComponent<Renderer>().material = whiteMat;
+                isColored = false;
+            }
+
+        }
+    }
 
     public void OnMouseOver()
     {
@@ -23,6 +81,6 @@ public class CrystalWhite3 : MonoBehaviour {
 
     public void OnMouseExit()
     {
-        gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
+        gameObject.GetComponent<Renderer>().material.color = new Color(.5f, .5f, .5f);
     }
 }

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Button1Script : MonoBehaviour {
 
-    //Yay
     ButtonPuzzleScript bps;
+    public GameObject ps;
+    public GameObject button1FX;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         bps = FindObjectOfType<ButtonPuzzleScript>();
 	}
 	
@@ -32,10 +33,11 @@ public class Button1Script : MonoBehaviour {
         if (bps.order == 2)
         {
             bps.order++;
+            button1FX = Instantiate(ps, new Vector3(transform.GetComponentInChildren<Button1Script>().transform.position.x, transform.GetComponentInChildren<Button1Script>().transform.position.y + 6, transform.GetComponentInChildren<Button1Script>().transform.position.z), Quaternion.identity);
         }
         else
         {
-            bps.order = 2;
+            bps.ResetCounter();
         }
     }
 }

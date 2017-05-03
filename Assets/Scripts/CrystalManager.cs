@@ -13,21 +13,10 @@ public class CrystalManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //holdingBlue = true;
-        //holdingGreen = true;
-        //holdingRed = true;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //Debug.Log(activeGem);
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    holdingBlue = false;
-        //} else if (Input.GetKeyDown(KeyCode.M))
-        //{
-        //    holdingBlue = true;
-        //}
     }
 
     public void ActivateBlue()

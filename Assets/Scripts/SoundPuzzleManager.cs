@@ -22,7 +22,7 @@ public class SoundPuzzleManager : MonoBehaviour {
         gameObject.GetComponent<AudioSource>().Play();
         GameObject sparkle = Instantiate(winSparkle, new Vector3(transform.GetComponent<SoundPuzzleManager>().transform.position.x, transform.GetComponent<SoundPuzzleManager>().transform.position.y + 6, transform.GetComponent<SoundPuzzleManager>().transform.position.z), Quaternion.identity);
         Destroy(sparkle, 3);
-        es.hasHint = true;
+        es.FinishedSoundPuzzle();
     }
 
     // Update is called once per frame

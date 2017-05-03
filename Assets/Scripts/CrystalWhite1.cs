@@ -24,29 +24,32 @@ public class CrystalWhite1 : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        if (cm.activeGem == 1 && cm.holdingBlue)
+        if (!isColored)
         {
-            gameObject.GetComponent<Renderer>().material = blueMat;
-            cm.holdingBlue = false;
-            cm.activeGem = 0;
-            properGem = false;
-            isColored = true;
-        }
-        else if (cm.activeGem == 2 && cm.holdingGreen)
-        {
-            gameObject.GetComponent<Renderer>().material = greenMat;
-            cm.holdingGreen = false;
-            cm.activeGem = 0;
-            properGem = false;
-            isColored = true;
-        }
-        else if (cm.activeGem == 3 && cm.holdingRed)
-        {
-            gameObject.GetComponent<Renderer>().material = redMat;
-            cm.holdingRed = false;
-            cm.activeGem = 0;
-            properGem = true;
-            isColored = true;
+            if (cm.activeGem == 1 && cm.holdingBlue)
+            {
+                gameObject.GetComponent<Renderer>().material = blueMat;
+                cm.holdingBlue = false;
+                cm.activeGem = 0;
+                properGem = false;
+                isColored = true;
+            }
+            else if (cm.activeGem == 2 && cm.holdingGreen)
+            {
+                gameObject.GetComponent<Renderer>().material = greenMat;
+                cm.holdingGreen = false;
+                cm.activeGem = 0;
+                properGem = false;
+                isColored = true;
+            }
+            else if (cm.activeGem == 3 && cm.holdingRed)
+            {
+                gameObject.GetComponent<Renderer>().material = redMat;
+                cm.holdingRed = false;
+                cm.activeGem = 0;
+                properGem = true;
+                isColored = true;
+            }
         }
         else if (isColored)
         {
@@ -80,6 +83,12 @@ public class CrystalWhite1 : MonoBehaviour {
 
     public void OnMouseExit()
     {
-        gameObject.GetComponent<Renderer>().material.color = new Color(.5f, .5f, .5f);
+        if (!isColored)
+        { 
+            gameObject.GetComponent<Renderer>().material.color = new Color(.5f, .5f, .5f);
+        } else
+        {
+            gameObject.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f);
+        }
     }
 }

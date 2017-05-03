@@ -25,29 +25,32 @@ public class CrystalWhite3 : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        if (cm.activeGem == 1 && cm.holdingBlue)
+        if (!isColored)
         {
-            gameObject.GetComponent<Renderer>().material = blueMat;
-            cm.holdingBlue = false;
-            cm.activeGem = 0;
-            isColored = true;
-            properGem = true;
-        }
-        else if (cm.activeGem == 2 && cm.holdingGreen)
-        {
-            gameObject.GetComponent<Renderer>().material = greenMat;
-            cm.holdingGreen = false;
-            cm.activeGem = 0;
-            isColored = true;
-            properGem = false;
-        }
-        else if (cm.activeGem == 3 && cm.holdingRed)
-        {
-            gameObject.GetComponent<Renderer>().material = redMat;
-            cm.holdingRed = false;
-            cm.activeGem = 0;
-            isColored = true;
-            properGem = false;
+            if (cm.activeGem == 1 && cm.holdingBlue)
+            {
+                gameObject.GetComponent<Renderer>().material = blueMat;
+                cm.holdingBlue = false;
+                cm.activeGem = 0;
+                isColored = true;
+                properGem = true;
+            }
+            else if (cm.activeGem == 2 && cm.holdingGreen)
+            {
+                gameObject.GetComponent<Renderer>().material = greenMat;
+                cm.holdingGreen = false;
+                cm.activeGem = 0;
+                isColored = true;
+                properGem = false;
+            }
+            else if (cm.activeGem == 3 && cm.holdingRed)
+            {
+                gameObject.GetComponent<Renderer>().material = redMat;
+                cm.holdingRed = false;
+                cm.activeGem = 0;
+                isColored = true;
+                properGem = false;
+            }
         }
         else if (isColored)
         {

@@ -6,6 +6,12 @@ public class Button3Script : MonoBehaviour {
 
     //Alcohol
     ButtonPuzzleScript bps;
+    public GameObject button3FX1;
+    public GameObject button3FX2;
+    public GameObject button3FX3;
+    public GameObject ps1;
+    public GameObject ps2;
+    public GameObject ps3;
 
     // Use this for initialization
     void Start()
@@ -33,18 +39,21 @@ public class Button3Script : MonoBehaviour {
         if (bps.order == 1)
         {
             bps.order++;
+            button3FX1 = Instantiate(ps1, new Vector3(transform.GetComponentInChildren<Button3Script>().transform.position.x, transform.GetComponentInChildren<Button3Script>().transform.position.y + 4, transform.GetComponentInChildren<Button3Script>().transform.position.z + 2), Quaternion.identity);
         }
         else if (bps.order == 4)
         {
             bps.order++;
+            button3FX2 = Instantiate(ps2, new Vector3(transform.GetComponentInChildren<Button3Script>().transform.position.x, transform.GetComponentInChildren<Button3Script>().transform.position.y + 6, transform.GetComponentInChildren<Button3Script>().transform.position.z), Quaternion.identity);
         }
         else if (bps.order == 6)
         {
             bps.order++;
+            button3FX3 = Instantiate(ps3, new Vector3(transform.GetComponentInChildren<Button3Script>().transform.position.x, transform.GetComponentInChildren<Button3Script>().transform.position.y + 4.5f, transform.GetComponentInChildren<Button3Script>().transform.position.z - 7.5f), Quaternion.identity);
         }
         else
         {
-            bps.order = 1;
+            bps.ResetCounter();
         }
     }
 }

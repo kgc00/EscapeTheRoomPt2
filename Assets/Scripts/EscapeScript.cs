@@ -17,6 +17,7 @@ public class EscapeScript : MonoBehaviour
     public Button hintButton;
     public Image soundPuzzleRewardImage;
     public Image hintImage;
+    public Sprite newMusicButtonImage;
     int musicButtonClicked;
     int hintButtonClicked;
 
@@ -28,15 +29,6 @@ public class EscapeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Should work");
-            
-        } else if (Input.GetKeyDown(KeyCode.M))
-        {
-            Debug.Log("Should work");
-            
-        }
     }
 
     public void MusicButtonClicked()
@@ -56,6 +48,12 @@ public class EscapeScript : MonoBehaviour
             soundPuzzleRewardImage.GetComponent<Image>().enabled = false;
             musicButtonClicked = 0;
         }
+    }
+
+    public void FinishedSoundPuzzle()
+    {
+        hasHint = true;
+        musicButton.image.sprite = newMusicButtonImage;
     }
 
     public void HintButtonClicked()

@@ -6,6 +6,10 @@ public class Button2Script : MonoBehaviour {
 
     //Cat
     ButtonPuzzleScript bps;
+    public GameObject button2FX1;
+    public GameObject button2FX2;
+    public GameObject ps1;
+    public GameObject ps2;
 
     // Use this for initialization
     void Start()
@@ -33,13 +37,16 @@ public class Button2Script : MonoBehaviour {
         if (bps.order == 3)
         {
             bps.order++;
-        } else if (bps.order == 5)
+            button2FX1 = Instantiate(ps1, new Vector3(transform.GetComponentInChildren<Button2Script>().transform.position.x, transform.GetComponentInChildren<Button2Script>().transform.position.y + 3, transform.GetComponentInChildren<Button2Script>().transform.position.z - 5), Quaternion.identity);
+        }
+        else if (bps.order == 5)
         {
             bps.order++;
+            button2FX2 = Instantiate(ps2, new Vector3(transform.GetComponentInChildren<Button2Script>().transform.position.x, transform.GetComponentInChildren<Button2Script>().transform.position.y + 7, transform.GetComponentInChildren<Button2Script>().transform.position.z), Quaternion.identity);
         }
         else
         {
-            bps.order = 1;
+            bps.ResetCounter();
         }
     }
 }
